@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="MainGrid">
-        <Label x:Name="mainLabel" Content="Hello, WPF!&#xA;" VerticalAlignment="Top" Height="292" FontSize="36" HorizontalAlignment="Left" FontFamily="Century Gothic" Width="240" Margin="292,0,0,0"/>
+        <Label x:Name="mainLabel" Content="Hello, WPF!&#xA;" VerticalAlignment="Top" Height="78" FontSize="36" HorizontalAlignment="Center" FontFamily="Century Gothic" Width="204"/>
         <Button x:Name="btnHello" Content="Здрасти" HorizontalAlignment="Left" Margin="582,22,0,0" VerticalAlignment="Top" Height="33" Width="194" FontFamily="Cascadia Code" FontSize="20" FontWeight="Bold" Click="Button_Click">
             <Button.Effect>
                 <DropShadowEffect/>
@@ -38,6 +38,14 @@
         <TextBox x:Name="nameTxtBox3" HorizontalAlignment="Left" Margin="622,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="25" AutomationProperties.IsRequiredForForm="True" FontSize="16" FontWeight="Bold" FontFamily="Arial" FontStyle="Normal"/>
         <Button x:Name="bigButton" VerticalAlignment="Top" Height="100" Margin="0,334,0,0" Click="bigButton_Click">
             Click me!
-        </Button>
+        </Button>
+        <ListBox x:Name="peopleListBox" Margin="207,49,218,181" SelectedIndex="0">
+            <ListBoxItem Content="Mike"/>
+            <ListBoxItem Content="John"/>
+            <ListBoxItem Content="Lisa"/>
+            <ListBoxItem Content="Mary"/>
+        </ListBox>
+        <Button Content="Click" HorizontalAlignment="Center" Margin="0,275,0,0" VerticalAlignment="Top" Height="33" Width="108" Click="Button_Click_1"/>
+
     </Grid>
 </Window>
