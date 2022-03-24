@@ -12,7 +12,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -53,17 +54,20 @@
             <Label x:Name="Name" Grid.Row="1" FontSize="16" FontWeight="Bold">Name:</Label>
             <Label Content="{Binding Path=Name}"></Label>
             <Label x:Name="Department" Grid.Row="2" FontSize="16" FontWeight="Bold">Department:</Label>
-            <Label Content="{Binding Path=Department}"></Label>
+            <Label Content="{Binding Path=Department}"></Label>
+
         </Grid>
 
         <Grid.Background>
             <ImageBrush ImageSource="watermark.png"/>
         </Grid.Background>
-    </Grid>
+    </Grid>
+
 
     <!-- People list -->
     <!-- Label -->
-    <!-- View report button -->
+    <!-- View report button -->
+
 
 
 </Window>
