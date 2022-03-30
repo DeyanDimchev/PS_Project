@@ -21,54 +21,46 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-            <Grid Grid.Row="3">
+            <Grid Grid.Row="3" Margin="0,10,0,0" Grid.RowSpan="2"
+                  Grid.ColumnSpan="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
 
                 <DataGrid x:Name="datagrid" 
-                          Grid.Column="1" 
-                          Grid.Row="0" 
+                          Grid.Column="0" 
+                          Grid.Row="1" 
+                          Grid.ColumnSpan="2"
                           ItemsSource="{Binding Path=Expenses}"
                           AutoGenerateColumns="False"
                           RowHeaderWidth="0" >
                     <DataGrid.Columns>
-                        <DataGridTextColumn
+                        <DataGridTextColumn Width="*"
                             Header="ExpenseType" 
                             Binding="{Binding Path=ExpenseType}"  />
-                        <DataGridTextColumn 
+                        <DataGridTextColumn Width="*"
                             Header="Amount" 
                             Binding="{Binding Path=ExpenseAmount}" />
                     </DataGrid.Columns>
                 </DataGrid>
 
-
-                <Border Grid.Column="0" 
-                        Grid.Row="0" 
-                        Padding="5" 
-                        Background="#FF383838">
-                    <Label  Grid.Column="0" 
-                        FontSize="16" 
-                            FontWeight="Bold" 
-                            Foreground="White">
-                        Expense Type
-                    </Label>
-                </Border>
-                <Border Grid.Column="1" Grid.Row="0" Padding="5" Background="#FF383838">
-                    <Label Grid.Column="1" FontSize="16" FontWeight="Bold" Foreground="White">Ammount</Label>
-                </Border>
             </Grid>
             
-            <Label Grid.Row="0" FontSize="22" FontWeight="Bold">Expense Report For:</Label>
-            <Label x:Name="Name"  Content="{Binding Path=Name}" Grid.Row="1" FontSize="16" FontWeight="Bold"></Label>
-
-            <Label x:Name="Department" Content="{Binding Path=Department}" Grid.Row="2" FontSize="16" FontWeight="Bold"></Label>
+            <Label Grid.Row="0" Grid.ColumnSpan="2" FontSize="22" FontWeight="Bold">Expense Report For:</Label>
+            <Label x:Name="NameLabel"  Content="Name:" Grid.Row="1" FontSize="16" FontWeight="Bold"></Label>
+            <Label x:Name="DepartmentLabel" Content="Department:" Grid.Row="2" FontSize="16" FontWeight="Bold"></Label>
+            <Label x:Name="Name"  Content="{Binding Path=Name}" Grid.Row="1" Grid.Column="1" FontSize="16" FontWeight="Bold"></Label>
+            <Label x:Name="Department" Content="{Binding Path=Department}" Grid.Row="2" Grid.Column="2" FontSize="16" FontWeight="Bold"></Label>
             
 
         </Grid>
