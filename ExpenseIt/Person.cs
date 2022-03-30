@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ExpenseIt
 {
-    internal class Person
+    public class Person
     {
         public string Name { get; set; }
-        public string Department;
-        public List<Expense> Expenses;
+        public string Department { get; set; }
+
+        public List<Expense> Expenses { get; set; }
     }
 }

@@ -28,6 +28,7 @@ namespace ExpenseIt
         public ExpenseReport()
         {
             InitializeComponent();
+
         }
     }
 }

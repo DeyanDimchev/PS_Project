@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ExpenseIt
 {
-    internal class Expense
+    public class Expense
     {
-        public string ExpenseType;
-        public double ExpenseAmount;
+        public string ExpenseType { get; set; }
+        public double ExpenseAmount { get; set; }
     }
 }

@@ -17,10 +17,10 @@ namespace ExpenseIt
     /// <summary>
     /// Interaction logic for ExpenseItHome.xaml
     /// </summary>
-    partial class ExpenseItHome : Window
+    public partial class ExpenseItHome : Window
     {
         public string MainCaptionText { get; set; }
-        public List<Person> ExpenseDataSource { get; set; }
+         public List<Person> ExpenseDataSource { get; set; }
         public DateTime LastChecked { get; set; }
 
 
@@ -105,7 +105,7 @@ namespace ExpenseIt
 
         private void viewBtn_Click(object sender, RoutedEventArgs e)
         {
-            ExpenseReport er = new ExpenseReport();
+            ExpenseReport er = new ExpenseReport(peopleListBox.SelectedItem);
             er.Height = this.Height;
             er.Width = this.Width;
             er.ShowDialog();

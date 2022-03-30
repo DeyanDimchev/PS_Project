@@ -32,18 +32,33 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <DataGrid Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Path=Expense}"
-                        AutoGenerateColumns="False" RowHeaderWidth="0" >
+                <DataGrid x:Name="datagrid" 
+                          Grid.Column="1" 
+                          Grid.Row="0" 
+                          ItemsSource="{Binding Path=Expenses}"
+                          AutoGenerateColumns="False"
+                          RowHeaderWidth="0" >
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="ExpenseType" 
-                        Binding="{Binding Path=ExpenseType}" />
-                        <DataGridTextColumn Header="Amount" Binding="{Binding Path=ExpenseAmount}"/>
+                        <DataGridTextColumn
+                            Header="ExpenseType" 
+                            Binding="{Binding Path=ExpenseType}"  />
+                        <DataGridTextColumn 
+                            Header="Amount" 
+                            Binding="{Binding Path=ExpenseAmount}" />
                     </DataGrid.Columns>
                 </DataGrid>
 
 
-                <Border Grid.Column="0" Grid.Row="0" Padding="5" Background="#FF383838">
-                    <Label Grid.Column="0" FontSize="16" FontWeight="Bold" Foreground="White">Expense Type</Label>
+                <Border Grid.Column="0" 
+                        Grid.Row="0" 
+                        Padding="5" 
+                        Background="#FF383838">
+                    <Label  Grid.Column="0" 
+                        FontSize="16" 
+                            FontWeight="Bold" 
+                            Foreground="White">
+                        Expense Type
+                    </Label>
                 </Border>
                 <Border Grid.Column="1" Grid.Row="0" Padding="5" Background="#FF383838">
                     <Label Grid.Column="1" FontSize="16" FontWeight="Bold" Foreground="White">Ammount</Label>
@@ -51,10 +66,10 @@
             </Grid>
             
             <Label Grid.Row="0" FontSize="22" FontWeight="Bold">Expense Report For:</Label>
-            <Label x:Name="Name" Grid.Row="1" FontSize="16" FontWeight="Bold">Name:</Label>
-            <Label Content="{Binding Path=Name}"></Label>
-            <Label x:Name="Department" Grid.Row="2" FontSize="16" FontWeight="Bold">Department:</Label>
-            <Label Content="{Binding Path=Department}"></Label>
+            <Label x:Name="Name"  Content="{Binding Path=Name}" Grid.Row="1" FontSize="16" FontWeight="Bold"></Label>
+
+            <Label x:Name="Department" Content="{Binding Path=Department}" Grid.Row="2" FontSize="16" FontWeight="Bold"></Label>
+            
 
         </Grid>
 
