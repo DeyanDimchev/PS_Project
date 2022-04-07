@@ -8,6 +8,8 @@ namespace StudentInfoSystem
 {
     public class Student
     {
+        private string username;        
+        private string password;
         public string name;
         public string secondName;
         public string lastName;
@@ -19,6 +21,10 @@ namespace StudentInfoSystem
         public int year;
         public int stream;
         public int group;
+
+        public string Username { get => username; set => username = value; }
+        public string Password { get => password; set => password = value; }
+
         public Student() { }
         
         public Student(string name, string secondName, 
@@ -38,5 +44,7 @@ namespace StudentInfoSystem
             this.stream = stream;
             this.group = group;
         }
+
+
     }
 }

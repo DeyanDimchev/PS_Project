@@ -16,6 +16,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ExpenseIt\watermark.png = ExpenseIt\watermark.png
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfExample", "InfoCommand\WpfExample.csproj", "{F1005917-7EB0-4D8D-8328-C9E9DC66A68A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyMVVM", "EasyMVVM\EasyMVVM.csproj", "{0AB2E52D-566A-46F8-BDC0-C99CA1E43E99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +42,14 @@ Global
 		{33FEF80B-58FE-46D8-8A6D-04F5F7A5D73E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33FEF80B-58FE-46D8-8A6D-04F5F7A5D73E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33FEF80B-58FE-46D8-8A6D-04F5F7A5D73E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1005917-7EB0-4D8D-8328-C9E9DC66A68A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1005917-7EB0-4D8D-8328-C9E9DC66A68A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1005917-7EB0-4D8D-8328-C9E9DC66A68A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1005917-7EB0-4D8D-8328-C9E9DC66A68A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AB2E52D-566A-46F8-BDC0-C99CA1E43E99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AB2E52D-566A-46F8-BDC0-C99CA1E43E99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AB2E52D-566A-46F8-BDC0-C99CA1E43E99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AB2E52D-566A-46F8-BDC0-C99CA1E43E99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

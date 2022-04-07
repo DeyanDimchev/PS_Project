@@ -23,6 +23,34 @@ namespace StudentInfoSystem
         public MainWindow()
         {
             InitializeComponent();
+            Student Student = StudentData.TestStudents[0];
+            nameBox.Text = Student.name;
+            secondNameBox.Text = Student.secondName;
+            lastNameBox.Text = Student.lastName;
+            facultyBox.Text = Student.faculty;
+            fieldBox.Text = Student.field;
+            qualificationBox.Text = Student.qualification;
+            statusBox.Text = Student.status;
+            facultyNumBox.Text = Student.facultyNum;
+            yearBox.Text = Student.year.ToString();
+            streamBox.Text = Student.stream.ToString();
+            groupBox.Text = Student.group.ToString();
+        }
+        public MainWindow(Student st)
+        {
+            InitializeComponent();
+            this.Student = st;
+            nameBox.Text = Student.name;
+            secondNameBox.Text = Student.secondName;
+            lastNameBox.Text = Student.lastName;
+            facultyBox.Text = Student.faculty;
+            fieldBox.Text = Student.field;
+            qualificationBox.Text = Student.qualification;
+            statusBox.Text = Student.status;
+            facultyNumBox.Text = Student.facultyNum;
+            yearBox.Text = Student.year.ToString();
+            streamBox.Text = Student.stream.ToString();
+            groupBox.Text = Student.group.ToString();
         }
         private Student _student;
         public Student Student { 
@@ -34,6 +62,7 @@ namespace StudentInfoSystem
             {
                 if (_student == null)
                 {
+                    _student = value;
                     clearBoxes();
                     disableBoxes();
                 }
@@ -45,13 +74,7 @@ namespace StudentInfoSystem
                 }
             }
         }
-        private void setButton_Click(object sender, RoutedEventArgs e)
-        {
-            _student = new Student("Deyan", "Dimitrov", "Dimchev",
-                          "FKST", "ITI", "Bachelor's", "active", "501219028", 4, 9, 36);
-            displayStudent(_student);//question?!
-
-        }
+   
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -73,18 +96,7 @@ namespace StudentInfoSystem
 
         private void displayStudent(Student student)
         {
-            MessageBox.Show(student.name);
-            nameBox.Text = student.name;
-            secondNameBox.Text = student.secondName;
-            lastNameBox.Text = student.lastName;
-            facultyBox.Text = student.faculty;
-            fieldBox.Text = student.field;
-            qualificationBox.Text = student.qualification;
-            statusBox.Text = student.status;
-            facultyNumBox.Text = student.facultyNum;
-            yearBox.Text = student.year.ToString();
-            streamBox.Text = student.stream.ToString();
-            groupBox.Text = student.group.ToString();
+        
         }
 
         private void disableBoxes()

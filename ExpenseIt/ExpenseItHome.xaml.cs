@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,22 +12,36 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
+
 
 namespace ExpenseIt
 {
     /// <summary>
     /// Interaction logic for ExpenseItHome.xaml
     /// </summary>
-    public partial class ExpenseItHome : Window
+    public partial class ExpenseItHome : Window, INotifyPropertyChanged
     {
+        public ObservableCollection<string> PersonsChecked { get; set; }
         public string MainCaptionText { get; set; }
          public List<Person> ExpenseDataSource { get; set; }
-        public DateTime LastChecked { get; set; }
+        public DateTime LastChecked
+        {
+            get { return LastChecked; }
+            set 
+            { 
+                LastChecked = value;
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("LastChecked"));
+                    
+             }
+        }
 
 
         public ExpenseItHome()
         {
             InitializeComponent();
+            PersonsChecked = new ObservableCollection<string>();
             MainCaptionText = "View Expense Report:";
             this.DataContext = this;
             LastChecked = DateTime.Now;
@@ -103,12 +118,21 @@ namespace ExpenseIt
              };
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private void viewBtn_Click(object sender, RoutedEventArgs e)
         {
             ExpenseReport er = new ExpenseReport(peopleListBox.SelectedItem);
             er.Height = this.Height;
             er.Width = this.Width;
             er.ShowDialog();
+        }
+        private void peopleListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            PersonsChecked.Add((peopleListBox.SelectedItem as
+                                System.Xml.XmlElement).Attributes["Name"].Value);
+
+            LastChecked = DateTime.Now;
         }
     }
 }
