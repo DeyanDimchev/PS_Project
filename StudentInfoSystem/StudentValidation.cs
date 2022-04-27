@@ -9,12 +9,15 @@ namespace StudentInfoSystem
 {
     internal class StudentValidation
     {
-       public Student GetStudentDataByUser(User user) { 
-            foreach(Student student in StudentData.TestStudents) {
-                if (student.facultyNum == user.fac_no)
-                    return student;
-            }
-            return null;
+        public Student GetStudentDataByUser(User user)
+        {
+            StudentInfoContext context = new StudentInfoContext();
+            Student result =
+(from st in context.Students
+ where st.FacultyNum == user.Fac_no
+ select st).First();
+            return result;
+
         }
     }
 }

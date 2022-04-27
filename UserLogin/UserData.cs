@@ -24,34 +24,34 @@ namespace UserLogin
             if (!_testUsers.Any())
             {
                 User testUser1 = new User();
-                testUser1.username = "ddimchev";
-                testUser1.password = "123456";
-                testUser1.fac_no = "501219028";
-                testUser1.role = 1;
-                testUser1.created = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
-                testUser1.validUntil = new DateTime();
-                testUser1.validUntil = DateTime.MaxValue;
+                testUser1.Username = "ddimchev";
+                testUser1.Password = "123456";
+                testUser1.Fac_no = "501219028";
+                testUser1.Role = 1;
+                testUser1.Created = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+                testUser1.ValidUntil = new DateTime();
+                testUser1.ValidUntil = DateTime.MaxValue;
                 _testUsers.Add(testUser1);
 
 
                 User testUser2 = new User();
-                testUser2.username = "dgocov";
-                testUser2.password = "654321";
-                testUser2.fac_no = "501219029";
-                testUser2.role = 4;
-                testUser2.created = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
-                testUser2.validUntil = new DateTime();
-                testUser2.validUntil = DateTime.MaxValue;
+                testUser2.Username = "dgocov";
+                testUser2.Password = "654321";
+                testUser2.Fac_no = "501219029";
+                testUser2.Role = 4;
+                testUser2.Created = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+                testUser2.ValidUntil = new DateTime();
+                testUser2.ValidUntil = DateTime.MaxValue;
                 _testUsers.Add(testUser2);
 
                 User testUser3 = new User();
-                testUser3.username = "divanov";
-                testUser3.password = "123456avcs";
-                testUser3.fac_no = "501219030";
-                testUser3.role = 4;
-                testUser3.created = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
-                testUser3.validUntil = new DateTime();
-                testUser3.validUntil = DateTime.MaxValue;
+                testUser3.Username = "divanov";
+                testUser3.Password = "123456avcs";
+                testUser3.Fac_no = "501219030";
+                testUser3.Role = 4;
+                testUser3.Created = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+                testUser3.ValidUntil = new DateTime();
+                testUser3.ValidUntil = DateTime.MaxValue;
                 _testUsers.Add(testUser3);
             }
         }
@@ -60,8 +60,8 @@ namespace UserLogin
         {
             ResetTestUserData();
             User userToBeLogged = ((User)(from user in _testUsers where 
-                         user.username == username 
-                         && user.password == password 
+                         user.Username == username 
+                         && user.Password == password 
                          select user));
             if (userToBeLogged != null)
                 return userToBeLogged;
@@ -72,9 +72,9 @@ namespace UserLogin
         {
             foreach(User user in _testUsers)
             {
-                if (user.username == username)
+                if (user.Username == username)
                 {
-                    user.validUntil = validity;
+                    user.ValidUntil = validity;
                     Logger.LogActivity("Changed validity of " + username);
                 }
             }
@@ -84,9 +84,9 @@ namespace UserLogin
         {
             foreach (User user in _testUsers)
             {
-                if (user.username == username)
+                if (user.Username == username)
                 {
-                    user.role = (int)role;
+                    user.Role = (int)role;
                     Logger.LogActivity("Changed role of  " + username);
                 }
             }
@@ -96,10 +96,10 @@ namespace UserLogin
         {
             foreach(User u in _testUsers)
             {
-                Console.WriteLine("\nusername: " + u.username);
-                Console.WriteLine("fac.no.: " + u.fac_no);
+                Console.WriteLine("\nusername: " + u.Username);
+                Console.WriteLine("fac.no.: " + u.Fac_no);
                 Console.Write("role: ");
-                switch (u.role)
+                switch (u.Role)
                 {
                     case 0:
                         Console.WriteLine("anonymous");

@@ -58,7 +58,7 @@ namespace UserLogin
             user = UserData.isUserPassCorrect(username, password);
             if (user != null)
             {
-                currentUserRole =(UserRoles) user.role;
+                currentUserRole =(UserRoles) user.Role;
                 Logger.LogActivity("Successful Login");
                 return true;
             }

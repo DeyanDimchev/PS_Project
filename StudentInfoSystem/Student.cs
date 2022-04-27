@@ -10,20 +10,32 @@ namespace StudentInfoSystem
     {
         private string username;        
         private string password;
-        public string name;
-        public string secondName;
-        public string lastName;
-        public string faculty;
-        public string field;
-        public string qualification;
-        public string status;
-        public string facultyNum;
-        public int year;
-        public int stream;
-        public int group;
+        private string name;
+        private string secondName;
+        private string lastName;
+        private string faculty;
+        private string field;
+        private string qualification;
+        private string status;
+        private string facultyNum;
+        private int year;
+        private int stream;
+        private int group;
 
-        public string Username { get => username; set => username = value; }
+        public int StudentId { get; set; }
+        public string Username { get =>username; set => username = value; }
         public string Password { get => password; set => password = value; }
+        public string Name { get => name; set => name = value; }
+        public string SecondName { get => secondName; set => secondName = value; }
+        public string LastName { get => lastName; set => lastName = value; }
+        public string Faculty { get => faculty; set => faculty = value; }
+        public string Field { get => field; set => field = value; }
+        public string Qualification { get => qualification; set => qualification = value; }
+        public string Status { get => status; set => status = value; }
+        public string FacultyNum { get => facultyNum; set => facultyNum = value; }
+        public int Year { get => year; set => year = value; }
+        public int Stream { get => stream; set => stream = value; }
+        public int Group { get => group; set => group = value; }
 
         public Student() { }
         
@@ -32,17 +44,17 @@ namespace StudentInfoSystem
             string qualification, string status, string facultyNum,
             int year, int stream, int group)
         {
-            this.name = name;
-            this.secondName = secondName;
-            this.lastName = lastName;
-            this.faculty = faculty;
-            this.field = field;
-            this.qualification = qualification;
-            this.status = status;
-            this.facultyNum = facultyNum;
-            this.year = year;
-            this.stream = stream;
-            this.group = group;
+            this.Name = name;
+            this.SecondName = secondName;
+            this.LastName = lastName;
+            this.Faculty = faculty;
+            this.Field = field;
+            this.Qualification = qualification;
+            this.Status = status;
+            this.FacultyNum = facultyNum;
+            this.Year = year;
+            this.Stream = stream;
+            this.Group = group;
         }
 
 

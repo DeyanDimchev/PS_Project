@@ -51,7 +51,7 @@
             <TextBox x:Name="facultyBox" HorizontalAlignment="Left" Margin="0,14,0,14" TextWrapping="Wrap" Text="" Width="230" TextChanged="TextBox_TextChanged" Grid.Row="4"  />
             <TextBox x:Name="fieldBox" HorizontalAlignment="Left" Margin="0,14,0,14" TextWrapping="Wrap" Text="" Width="230" TextChanged="TextBox_TextChanged" Grid.Row="5" />
             <TextBox x:Name="qualificationBox" HorizontalAlignment="Left" Margin="0,14,0,14" TextWrapping="Wrap" Text="" Width="230" TextChanged="TextBox_TextChanged" Grid.Row="6" />
-            <TextBox x:Name="statusBox" HorizontalAlignment="Left" Margin="0,14,0,14" TextWrapping="Wrap" Text="" Width="230" TextChanged="TextBox_TextChanged" Grid.Row="7"  />
+            <ListBox x:Name="statusBox" HorizontalAlignment="Left" Margin="0,14,0,14" Width="230" Grid.Row="7" ItemsSource="{Binding StudStatusChoices}"  />
             <TextBox x:Name="facultyNumBox" HorizontalAlignment="Left" Margin="0,14,0,14" TextWrapping="Wrap" Text="" Width="230" TextChanged="TextBox_TextChanged" Grid.Row="8"/>
         </Grid>
         <Grid x:Name="grid3" Margin="348,0,0,0">
@@ -73,6 +73,7 @@
             <TextBox x:Name="streamBox" HorizontalAlignment="Left" Margin="79,24,0,27" TextWrapping="Wrap" Text="" Width="55" Height="25" TextChanged="TextBox_TextChanged" Grid.Column="1" Grid.Row="2" RenderTransformOrigin="0.497,0.609"/>
             <Label x:Name="groupLabel" Content="Група:" Width="57" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,6,0,0" Grid.Column="1" Grid.Row="3"/>
             <TextBox x:Name="groupBox" HorizontalAlignment="Left" Margin="79,7,0,45" TextWrapping="Wrap" Text="" Width="55" Height="25" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.436,0.401" Grid.Column="1" Grid.Row="3"/>
+            <Button Content="Is the query empty?" Grid.Row="0" Grid.Column="1" Height="150" Width="120" Click="Button_Click"/>
         </Grid>
 
     </Grid>

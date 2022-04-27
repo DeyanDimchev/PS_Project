@@ -20,9 +20,9 @@ namespace UserLogin{
             if (lv.ValidateUserInput(ref user))
             {
               
-                Console.WriteLine("username: "+user.username);
-                Console.WriteLine("password: " + user.password);
-                Console.WriteLine("fac.no.: " + user.fac_no);
+                Console.WriteLine("username: "+user.Username);
+                Console.WriteLine("password: " + user.Password);
+                Console.WriteLine("fac.no.: " + user.Fac_no);
                 switch (LoginValidation.currentUserRole)
                 {
                     case UserRoles.ANONYMOUS: 
